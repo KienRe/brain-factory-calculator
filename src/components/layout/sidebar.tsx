@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Plus, Book } from 'lucide-react';
-import { ItemSelector } from '@/components/dialogs/item-selector';
+import React, { useState } from "react";
+import { Plus, Book } from "lucide-react";
+import { ItemSelector } from "@/components/dialogs/item-selector";
 
-type DialogType = 'input' | 'output' | 'recipes' | null;
+type DialogType = "input" | "output" | "recipes" | null;
 
 export function Sidebar() {
   const [dialogType, setDialogType] = useState<DialogType>(null);
@@ -17,7 +17,7 @@ export function Sidebar() {
           <div className="flex justify-between items-center mb-2">
             <h2 className="text-lg font-semibold">Outputs</h2>
             <button
-              onClick={() => setDialogType('output')}
+              onClick={() => setDialogType("output")}
               className="p-1 hover:bg-gray-700 rounded"
             >
               <Plus className="h-5 w-5" />
@@ -30,7 +30,7 @@ export function Sidebar() {
           <div className="flex justify-between items-center mb-2">
             <h2 className="text-lg font-semibold">Inputs</h2>
             <button
-              onClick={() => setDialogType('input')}
+              onClick={() => setDialogType("input")}
               className="p-1 hover:bg-gray-700 rounded"
             >
               <Plus className="h-5 w-5" />
@@ -42,7 +42,7 @@ export function Sidebar() {
         <div>
           <h2 className="text-lg font-semibold mb-2">Options</h2>
           <button
-            onClick={() => setDialogType('recipes')}
+            onClick={() => setDialogType("recipes")}
             className="flex items-center gap-2 p-2 w-full bg-gray-700 hover:bg-gray-600 rounded"
           >
             <Book className="h-5 w-5" />
@@ -53,10 +53,7 @@ export function Sidebar() {
 
       {/* Dialog */}
       {dialogType && (
-        <ItemSelector
-          type={dialogType}
-          onClose={() => setDialogType(null)}
-        />
+        <ItemSelector type={dialogType} onClose={() => setDialogType(null)} />
       )}
     </div>
   );

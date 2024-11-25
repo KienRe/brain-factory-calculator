@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Sidebar } from './sidebar';
+import React from "react";
+import { Sidebar } from "./sidebar";
 
 export function MainLayout() {
   return (

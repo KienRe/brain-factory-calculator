@@ -1,10 +1,10 @@
-import React from 'react';
-import { X, Search } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { resources } from '@/data/resources';
+import React from "react";
+import { X, Search } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { resources } from "@/data/resources";
 
 interface ItemSelectorProps {
-  type: 'input' | 'output' | 'recipes';
+  type: "input" | "output" | "recipes";
   onClose: () => void;
 }
 
@@ -15,14 +15,9 @@ export function ItemSelector({ type, onClose }: ItemSelectorProps) {
         <CardHeader>
           <CardTitle className="flex justify-between items-center">
             <span>
-              {type === 'recipes' 
-                ? 'Recipe Management' 
-                : `Select ${type} Item`}
+              {type === "recipes" ? "Recipe Management" : `Select ${type} Item`}
             </span>
-            <button
-              onClick={onClose}
-              className="p-1 hover:bg-gray-100 rounded"
-            >
+            <button onClick={onClose} className="p-1 hover:bg-gray-100 rounded">
               <X className="h-5 w-5" />
             </button>
           </CardTitle>

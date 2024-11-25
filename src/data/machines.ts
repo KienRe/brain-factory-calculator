@@ -1,22 +1,22 @@
-import { Machines } from '@/lib/types';
+import { Machines } from "@/lib/types";
 
 export const machines: Machines = {
   synthesizer: {
-    name: 'Neural Synthesizer',
-    icon: '🔬',
+    name: "Neural Synthesizer",
+    icon: "🔬",
     baseRate: 1,
-    powerUsage: 5
+    powerUsage: 5,
   },
   processor: {
-    name: 'Signal Processor',
-    icon: '🔄',
+    name: "Signal Processor",
+    icon: "🔄",
     baseRate: 2,
-    powerUsage: 10
+    powerUsage: 10,
   },
   transmitter: {
-    name: 'Neurotransmitter Factory',
-    icon: '🏭',
+    name: "Neurotransmitter Factory",
+    icon: "🏭",
     baseRate: 0.5,
-    powerUsage: 15
-  }
+    powerUsage: 15,
+  },
 };
