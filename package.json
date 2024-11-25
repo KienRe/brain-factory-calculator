@@ -10,6 +10,7 @@
     "lint": "eslint . --config config/linting/eslint.config.mjs",
     "lint:fix": "eslint . --config config/linting/eslint.config.mjs --fix",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "clean": "rimraf node_modules package-lock.json && npm cache clean --force && npm install"
   },
   "dependencies": {
