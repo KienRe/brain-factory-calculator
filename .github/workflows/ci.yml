@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [dev]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -25,12 +25,3 @@ jobs:
           npm run format:check
           npm run test
           npm run build
-
-      - name: Create PR to main if checks pass
-        if: success() && github.ref == 'refs/heads/dev'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          title: 'Automated PR: Dev to Main'
-          body: 'All checks passed - ready to merge to main'
