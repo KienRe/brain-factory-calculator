@@ -2,8 +2,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/brain",
-  assetPrefix: "/brain/",
+  basePath: "/brain-factory-calculator",
+  assetPrefix: "/brain-factory-calculator/",
   images: {
     unoptimized: true,
   },
