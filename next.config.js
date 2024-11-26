@@ -3,10 +3,10 @@
 const nextConfig = {
   output: "export",
   basePath: "/brain",
-  reactStrictMode: true,
+  assetPrefix: "/brain/",
   images: {
     unoptimized: true,
   },
 };
 
-module.exports = nextConfig; // Ensure this line is correct
+module.exports = nextConfig;

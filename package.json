@@ -13,7 +13,7 @@
     "format:check": "prettier --check .",
     "clean": "rimraf node_modules package-lock.json && npm cache clean --force && npm install",
     "predeploy": "node deploy-check.js && npm run build",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -e brain"
   },
   "dependencies": {
     "next": "^15.0.3",
@@ -50,5 +50,6 @@
   },
   "engines": {
     "node": "22.11.0"
-  }
+  },
+  "homepage": "http://rkien.eu/brain"
 }
