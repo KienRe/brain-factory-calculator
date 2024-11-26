@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Plus, Book } from "lucide-react";
 import { ItemSelector } from "@/components/dialogs/item-selector";
+import { RecipeManager } from '@/components/dialogs/recipe-management/recipe-manager';
 
 type DialogType = "input" | "output" | "recipes" | null;
 
@@ -51,9 +52,18 @@ export function Sidebar() {
         </div>
       </div>
 
-      {/* Dialog */}
-      {dialogType && (
-        <ItemSelector type={dialogType} onClose={() => setDialogType(null)} />
+      {/* Update dialog rendering */}
+      {dialogType === 'recipes' ? (
+        <RecipeManager onClose={() => setDialogType(null)} />
+      ) : dialogType && (
+        <ItemSelector
+          type={dialogType}
+          onClose={() => setDialogType(null)}
+          onSelect={(resourceId) => {
+            console.log(`Selected ${resourceId}`); // Replace with actual selection handling
+            setDialogType(null);
+          }}
+        />
       )}
     </div>
   );

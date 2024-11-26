@@ -54,3 +54,9 @@ Get-PSTree .\src\ -Depth 2 -Directory
 
 Get the recursive size of the folders
 Get-PSTree .\src\ -Depth 2 -Directory -RecursiveSize
+
+
+### Linting / Formatting Rules
+
+ESLint is already configured in the project. Make sure all generated code is linted to not throw any errors.
+Prettier is also configured in the project. Make sure all generated code is formatted to not throw any errors.
