@@ -17,7 +17,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Brain Factory Calculator",
   description: "Calculator for Brain Factory game",
-  metadataBase: new URL('http://rkien.eu/brain'),
+  metadataBase: new URL("http://rkien.eu/brain"),
 };
 
 export default function RootLayout({
