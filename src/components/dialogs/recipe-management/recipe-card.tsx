@@ -1,9 +1,8 @@
 // src/components/dialogs/recipe-management/recipe-card.tsx
 import React, { useState } from "react";
-import { Edit, Trash2, Check, X } from "lucide-react";
+import { Edit } from "lucide-react";
 import type { Recipe } from "@/lib/types";
 import { useRecipes } from "@/contexts/recipe-context";
-import { Dialog } from "@/components/ui/dialog";
 import { resources } from "@/data/resources";
 import { formatResourceName } from "@/lib/utils/formatting";
 
@@ -14,6 +13,8 @@ interface RecipeCardProps {
 
 type RecipeSection = "inputs" | "output";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// TODO: Implement editing functionality
 export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedRecipe, setEditedRecipe] = useState(recipe);
@@ -49,6 +50,7 @@ export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
       }));
     }
   };
+  /* eslint-enable @typescript-eslint/no-unused-vars */
 
   return (
     <div className="border border-gray-700/50 rounded-lg p-6 bg-gray-800/50 backdrop-blur-sm">

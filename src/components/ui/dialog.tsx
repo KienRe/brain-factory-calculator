@@ -12,7 +12,7 @@ export function Dialog({ title, children, onClose, onConfirm }: DialogProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
+    const handleEscape = (event: globalThis.KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
       }

@@ -61,7 +61,8 @@ export function Sidebar() {
             type={dialogType}
             onClose={() => setDialogType(null)}
             onSelect={(resourceId) => {
-              console.log(`Selected ${resourceId}`); // Replace with actual selection handling
+              // TODO: Implement resource selection
+              void resourceId;
               setDialogType(null);
             }}
           />

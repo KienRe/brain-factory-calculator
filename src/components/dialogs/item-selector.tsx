@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Search, X } from "lucide-react";
-import { Dialog } from "@/components/ui/dialog";
 import { resources } from "@/data/resources";
 import { groupResourcesByCategory } from "@/lib/utils/grouping";
 import { formatResourceName } from "@/lib/utils/formatting";
