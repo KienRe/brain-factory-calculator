@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "rimraf node_modules package-lock.json && npm cache clean --force && npm install",
-    "predeploy": "npm run build",
+    "predeploy": "node deploy-check.js && npm run build",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
