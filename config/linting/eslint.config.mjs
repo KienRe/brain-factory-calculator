@@ -35,6 +35,18 @@ export default [
     ],
   },
   {
+    files: ['deploy-check.js', 'scripts/**/*.js'],
+    languageOptions: {
+      globals: {
+        require: 'readonly',
+        console: 'readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
+        module: 'readonly',
+      },
+    },
+  },
+  {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsParser,
