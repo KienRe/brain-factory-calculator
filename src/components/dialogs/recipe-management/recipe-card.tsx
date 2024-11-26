@@ -1,18 +1,18 @@
 // src/components/dialogs/recipe-management/recipe-card.tsx
-import React, { useState } from 'react';
-import { Edit, Trash2, Check, X } from 'lucide-react';
-import type { Recipe } from '@/lib/types';
-import { useRecipes } from '@/contexts/recipe-context';
-import { Dialog } from '@/components/ui/dialog';
-import { resources } from '@/data/resources';
-import { formatResourceName } from '@/lib/utils/formatting';
+import React, { useState } from "react";
+import { Edit, Trash2, Check, X } from "lucide-react";
+import type { Recipe } from "@/lib/types";
+import { useRecipes } from "@/contexts/recipe-context";
+import { Dialog } from "@/components/ui/dialog";
+import { resources } from "@/data/resources";
+import { formatResourceName } from "@/lib/utils/formatting";
 
 interface RecipeCardProps {
   recipe: Recipe;
   resourceId: string;
 }
 
-type RecipeSection = 'inputs' | 'output';
+type RecipeSection = "inputs" | "output";
 
 export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
   const [isEditing, setIsEditing] = useState(false);
@@ -31,21 +31,21 @@ export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
   };
 
   const handleInputChange = (key: string, value: string | number) => {
-    if (key.startsWith('inputs.') || key.startsWith('output.')) {
-      const [sectionKey, resource] = key.split('.');
+    if (key.startsWith("inputs.") || key.startsWith("output.")) {
+      const [sectionKey, resource] = key.split(".");
       const section = sectionKey as RecipeSection;
-      
-      setEditedRecipe(prev => ({
+
+      setEditedRecipe((prev) => ({
         ...prev,
         [section]: {
           ...prev[section],
-          [resource]: Number(value)
-        }
+          [resource]: Number(value),
+        },
       }));
     } else {
-      setEditedRecipe(prev => ({
+      setEditedRecipe((prev) => ({
         ...prev,
-        [key]: value
+        [key]: value,
       }));
     }
   };
@@ -61,7 +61,7 @@ export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
           )}
         </div>
         <div className="flex gap-2">
-          <button 
+          <button
             className="p-2 rounded hover:bg-gray-700/50 transition-colors"
             onClick={() => setIsEditing(true)}
           >
@@ -78,9 +78,7 @@ export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
           <div className="space-y-3 pt-2">
             {Object.entries(recipe.inputs).map(([input, amount]) => (
               <div key={input} className="flex items-center gap-2">
-                <span className="text-gray-300 font-medium">
-                  {amount}x
-                </span>
+                <span className="text-gray-300 font-medium">{amount}x</span>
                 {resources[input]?.icon && (
                   <span className="text-lg">{resources[input].icon}</span>
                 )}
@@ -100,9 +98,7 @@ export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
             <div className="text-gray-400">
               {formatResourceName(recipe.machine)}
             </div>
-            <div className="text-gray-400">
-              {recipe.baseTime}s
-            </div>
+            <div className="text-gray-400">{recipe.baseTime}s</div>
           </div>
         </div>
 
@@ -113,9 +109,7 @@ export function RecipeCard({ recipe, resourceId }: RecipeCardProps) {
           <div className="space-y-3 pt-2">
             {Object.entries(recipe.output).map(([output, amount]) => (
               <div key={output} className="flex items-center gap-2">
-                <span className="text-gray-300 font-medium">
-                  {amount}x
-                </span>
+                <span className="text-gray-300 font-medium">{amount}x</span>
                 {resources[output]?.icon && (
                   <span className="text-lg">{resources[output].icon}</span>
                 )}

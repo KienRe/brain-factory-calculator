@@ -13,14 +13,15 @@ interface ItemSelectorProps {
 
 export function ItemSelector({ type, onClose, onSelect }: ItemSelectorProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  
-  const filteredResources = Object.entries(resources).filter(([id, resource]) =>
-    resource.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    formatResourceName(id).toLowerCase().includes(searchQuery.toLowerCase())
+
+  const filteredResources = Object.entries(resources).filter(
+    ([id, resource]) =>
+      resource.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      formatResourceName(id).toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   const groupedResources = groupResourcesByCategory(
-    Object.fromEntries(filteredResources)
+    Object.fromEntries(filteredResources),
   );
 
   return (
@@ -28,7 +29,9 @@ export function ItemSelector({ type, onClose, onSelect }: ItemSelectorProps) {
       <div className="w-[900px] h-[80vh] bg-gray-900 rounded-lg border border-gray-800 flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-800">
-          <h2 className="text-xl font-semibold text-gray-100">Select {type} Item</h2>
+          <h2 className="text-xl font-semibold text-gray-100">
+            Select {type} Item
+          </h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-800 rounded-full transition-colors"

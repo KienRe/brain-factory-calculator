@@ -4,16 +4,23 @@ export interface Machine {
   description: string;
   baseRate: number;
   powerUsage: number;
-  tier: 'basic' | 'advanced' | 'emotional' | 'complex' | 'elite';
-  unlockCost: number
+  tier: "basic" | "advanced" | "emotional" | "complex" | "elite";
+  unlockCost: number;
 }
 
 export interface Resource {
   name: string;
   icon: string;
   description: string;
-  category: 'raw' | 'components' | 'neurotransmitters' | 'basic-emotions' | 
-  'medium-emotions' | 'high-emotions' | 'complex-emotions' | 'elite-emotions';
+  category:
+    | "raw"
+    | "components"
+    | "neurotransmitters"
+    | "basic-emotions"
+    | "medium-emotions"
+    | "high-emotions"
+    | "complex-emotions"
+    | "elite-emotions";
 }
 
 export interface Recipe {
@@ -24,7 +31,7 @@ export interface Recipe {
   output: Record<string, number>;
   baseTime: number;
   isDefault: boolean;
-  category?: 'basic' | 'medium' | 'high' | 'complex' | 'elite';
+  category?: "basic" | "medium" | "high" | "complex" | "elite";
 }
 
 export type Machines = Record<string, Machine>;

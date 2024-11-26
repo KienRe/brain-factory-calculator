@@ -18,7 +18,7 @@ export const recipes: Recipes = {
       category: "basic",
     },
   ],
-  
+
   brainEnergy: [
     {
       id: "brain-energy",

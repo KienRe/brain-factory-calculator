@@ -1,11 +1,11 @@
 import type { Config } from "tailwindcss";
-import { join } from 'path';
+import { join } from "path";
 
 export default {
   content: [
-    join(__dirname, '../../src/app/**/*.{js,ts,jsx,tsx}'),
-    join(__dirname, '../../src/components/**/*.{js,ts,jsx,tsx}'),
-    join(__dirname, '../../src/**/*.{js,ts,jsx,tsx}'),
+    join(__dirname, "../../src/app/**/*.{js,ts,jsx,tsx}"),
+    join(__dirname, "../../src/components/**/*.{js,ts,jsx,tsx}"),
+    join(__dirname, "../../src/**/*.{js,ts,jsx,tsx}"),
   ],
   theme: {
     extend: {
@@ -15,7 +15,5 @@ export default {
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar')({ nocompatible: true }),
-  ],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 } satisfies Config;
